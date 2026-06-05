@@ -2,6 +2,8 @@
 from modulos.archivos import cargar_paises
 from modulos.paises import mostrar_paises
 from modulos.paises import agregar_pais
+from modulos.paises import actualizar_pais
+from modulos.paises import buscar_pais
 
 # variable global para manejar el archivo csv
 paises = []
@@ -34,10 +36,10 @@ while opcion != "9":
         agregar_pais(paises)
     
     elif opcion == "3":
-        print("Actualizar dato del pais")
+        actualizar_pais(paises)
     
     elif opcion == "4":
-        print("Buscar pais")
+        buscar_pais(paises)
 
     elif opcion == "5":
         print("\n======================")

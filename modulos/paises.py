@@ -1,29 +1,52 @@
-# Mostrar informacion de paises
+# Mostrar información de países
 def mostrar_paises(paises):
     if len(paises) == 0:
-        print("\nNo hay paises cargados.")
+        print("\nNo hay países cargados.")
         return
 
-    print("\n===== Paises =====")
+    print("\n===== Países =====")
 
     for pais in paises:
+        try:
+            print(
+                f"Nombre: {pais['Nombre']} | "
+                f"Población: {pais['Poblacion']} | "
+                f"Superficie: {pais['Superficie']} | "
+                f"Continente: {pais['Continente']}"
+            )
+        except KeyError as e:
+            print(f"Error: falta la clave {e} en un país.")
 
-        print(
-            f"Nombre: {pais['Nombre']} | "
-            f"Poblacion: {pais['Poblacion']} | "
-            f"Superficie: {pais['Superficie']} | "
-            f"Continente: {pais['Continente']} "
-        )
-
-# Agregar producto
+# Agregar país
 def agregar_pais(paises):
 
-    print("\n===== Nuevo Pais =====")
+    print("\n===== Nuevo País =====")
 
-    nombre = input("Nombre: ").strip()
-    poblacion = int(input("Poblacion: "))
-    superficie = float(input("Superficie: "))
-    continente = input("Continente: ").strip()
+    try:
+        nombre = input("Nombre: ").strip()
+        poblacion = int(input("Población: "))
+        superficie = float(input("Superficie: "))
+        continente = input("Continente: ").strip()
+
+    except ValueError:
+        print("\nError: Debe ingresar datos válidos.")
+        return
+
+    if nombre == "":
+        print("\nError: El país debe tener un nombre.")
+        return
+
+    if continente == "":
+        print("\nError: Debe ingresar un continente.")
+        return
+
+    if poblacion < 0:
+        print("\nError: La población no puede ser negativa.")
+        return
+
+    if superficie <= 0:
+        print("\nError: La superficie debe ser mayor que 0.")
+        return
 
     nuevo_pais = {
         "Nombre": nombre,
@@ -34,4 +57,56 @@ def agregar_pais(paises):
 
     paises.append(nuevo_pais)
 
-    print("Paises agregado correctamente.")
+    print("\nPaís agregado correctamente.")
+
+# Actualizar poblacion y superficie de un pais
+def actualizar_pais(paises):
+    nombre_buscar = input("\nIngrese el nombre del país a actualizar: ").strip()
+
+    for pais in paises:
+        if pais["Nombre"].lower() == nombre_buscar.lower():
+            print("\n===== PAÍS ENCONTRADO =====")
+            print(f"Nombre: {pais['Nombre']}")
+            print(f"Población actual: {pais['Poblacion']}")
+            print(f"Superficie actual: {pais['Superficie']}")
+
+            try:
+                nueva_poblacion = int(input("\nIngrese la nueva población: "))
+                nueva_superficie = float(input("Ingrese la nueva superficie: "))
+
+                pais["Poblacion"] = nueva_poblacion
+                pais["Superficie"] = nueva_superficie
+
+                print("\nPaís actualizado correctamente.")
+            except ValueError:
+                print("\nError: Debe ingresar valores numéricos válidos.")
+
+            return
+
+    print("\nNo se encontró el país.")
+
+# Buscar país
+def buscar_pais(paises):
+
+    nombre_buscar = input("\nIngrese el nombre del país a buscar: ").strip()
+
+    if nombre_buscar == "":
+        print("\nError: Debe ingresar un nombre.")
+        return
+
+    encontrado = False
+
+    for pais in paises:
+
+        if nombre_buscar.lower() in pais["Nombre"].lower():
+
+            print("\n===== PAÍS ENCONTRADO =====")
+            print(f"Nombre: {pais['Nombre']}")
+            print(f"Población: {pais['Poblacion']}")
+            print(f"Superficie: {pais['Superficie']}")
+            print(f"Continente: {pais['Continente']}")
+
+            encontrado = True
+
+    if not encontrado:
+        print("\nNo se encontraron países con ese nombre.")

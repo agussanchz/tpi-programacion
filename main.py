@@ -1,7 +1,7 @@
 # funciones para ejecutar en el menu
-from funciones import cargar_paises
-from funciones import mostrar_paises
-from funciones import agregar_pais
+from modulos.archivos import cargar_paises
+from modulos.paises import mostrar_paises
+from modulos.paises import agregar_pais
 
 # variable global para manejar el archivo csv
 paises = []

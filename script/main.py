@@ -1,12 +1,16 @@
-# aqui va a ir el codigo completo de nuestro sistema
-
 # funciones para ejecutar en el menu
+from funciones import cargar_paises
+from funciones import mostrar_paises
+from funciones import agregar_pais
+
+# variable global para manejar el archivo csv
+paises = []
 
 # menu principal
-
+cargar_paises(paises)
 opcion = ""
 
-while opcion != "8":
+while opcion != "9":
 
     print("\n======================")
     print("   MENU PRINCIPAL")
@@ -18,15 +22,16 @@ while opcion != "8":
     print("5. Filtrar pais")
     print("6. Ordenas paises")
     print("7. Mostrar estadisticas")
-    print("8. Guardar y salir")
+    print("8. Guardar cambios")
+    print("9. Salir")
 
     opcion = input("\nSeleccione una opcion: ").strip()
 
     if opcion == "1":
-        print('mostrar todos los paises que tenemos en el archivo csv')
+        mostrar_paises(paises)
 
     elif opcion == "2":
-        print("Agregar pais")
+        agregar_pais(paises)
     
     elif opcion == "3":
         print("Actualizar dato del pais")
@@ -58,6 +63,12 @@ while opcion != "8":
         print('2. Promedio de población')
         print('3. Promedio de superficie')
         print('4. Cantidad de países por continente')
+
+    elif opcion == "8":
+        print("Guardar cambios")
+    
+    elif opcion == "9":
+        print("Saliendo del sistema..")
 
     else:
         print('\nOpcion invalida')

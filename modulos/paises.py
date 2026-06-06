@@ -1,3 +1,6 @@
+from modulos.normalizar import normalizar_texto
+
+
 # Mostrar información de países
 def mostrar_paises(paises):
     if len(paises) == 0:
@@ -63,8 +66,14 @@ def agregar_pais(paises):
 def actualizar_pais(paises):
     nombre_buscar = input("\nIngrese el nombre del país a actualizar: ").strip()
 
+    if nombre_buscar == "":
+        print("\nError: Debe ingresar un nombre.")
+        return
+
+    nombre_buscar_normalizado = normalizar_texto(nombre_buscar)
+
     for pais in paises:
-        if pais["Nombre"].lower() == nombre_buscar.lower():
+        if normalizar_texto(pais["Nombre"]) == nombre_buscar_normalizado:
             print("\n===== PAÍS ENCONTRADO =====")
             print(f"Nombre: {pais['Nombre']}")
             print(f"Población actual: {pais['Poblacion']}")
@@ -90,6 +99,8 @@ def buscar_pais(paises):
 
     nombre_buscar = input("\nIngrese el nombre del país a buscar: ").strip()
 
+    nombre_buscar_normalizado = normalizar_texto(nombre_buscar)
+
     if nombre_buscar == "":
         print("\nError: Debe ingresar un nombre.")
         return
@@ -98,7 +109,7 @@ def buscar_pais(paises):
 
     for pais in paises:
 
-        if nombre_buscar.lower() in pais["Nombre"].lower():
+        if nombre_buscar_normalizado in normalizar_texto(pais["Nombre"]):
 
             print("\n===== PAÍS ENCONTRADO =====")
             print(f"Nombre: {pais['Nombre']}")

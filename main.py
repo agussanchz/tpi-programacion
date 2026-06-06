@@ -4,6 +4,7 @@ from modulos.paises import mostrar_paises
 from modulos.paises import agregar_pais
 from modulos.paises import actualizar_pais
 from modulos.paises import buscar_pais
+from modulos.filtros import filtrar_paises
 
 # variable global para manejar el archivo csv
 paises = []
@@ -43,11 +44,9 @@ while opcion != "9":
 
     elif opcion == "5":
         print("\n======================")
-        print("   Sub menu de filtrado de paises ")
+        print("  Filtrado de paises ")
         print("======================")
-        print('1. Filtrar por continente')
-        print('2. Filtrar por poblacion')
-        print('3. Filtrar por superficie')
+        filtrar_paises(paises)
 
     elif opcion == "6":
         print("\n======================")

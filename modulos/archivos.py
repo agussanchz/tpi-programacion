@@ -9,8 +9,8 @@ def cargar_paises(paises):
         for fila in lector_dic:
             pais = {
                 "Nombre": fila["nombre"],
-                "Poblacion": fila["poblacion"],
-                "Superficie": fila["superficie"],
+                "Poblacion": int(fila["poblacion"]),
+                "Superficie": float(fila["superficie"]),
                 "Continente": fila["continente"]
             }
 

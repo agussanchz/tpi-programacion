@@ -6,6 +6,7 @@ from modulos.paises import actualizar_pais
 from modulos.paises import buscar_pais
 from modulos.filtros import filtrar_paises
 from modulos.ordenamientos import ordenar_paises
+from modulos.estadisticas import mostrar_estadisticas
 
 # Variable global para manejar el archivo csv
 paises = []
@@ -57,12 +58,9 @@ while opcion != "9":
 
     elif opcion == "7":
         print("\n======================")
-        print(" Estadisticas")
+        print("    Estadisticas   ")
         print("======================")
-        print('1. País con mayor y menor población')
-        print('2. Promedio de población')
-        print('3. Promedio de superficie')
-        print('4. Cantidad de países por continente')
+        mostrar_estadisticas(paises)
 
     elif opcion == "8":
         print("Guardar cambios")

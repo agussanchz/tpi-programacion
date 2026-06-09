@@ -1,15 +1,16 @@
-# funciones para ejecutar en el menu
+# Funciones para ejecutar en el menu
 from modulos.archivos import cargar_paises
 from modulos.paises import mostrar_paises
 from modulos.paises import agregar_pais
 from modulos.paises import actualizar_pais
 from modulos.paises import buscar_pais
 from modulos.filtros import filtrar_paises
+from modulos.ordenamientos import ordenar_paises
 
-# variable global para manejar el archivo csv
+# Variable global para manejar el archivo csv
 paises = []
 
-# menu principal
+# Menu principal
 cargar_paises(paises)
 opcion = ""
 
@@ -50,15 +51,13 @@ while opcion != "9":
 
     elif opcion == "6":
         print("\n======================")
-        print("   Sub menu de ordenamiento de paises ")
+        print("Ordenamiento de paises ")
         print("======================")
-        print('1. Ordenar por nombre')
-        print('2. Filtrar por poblacion')
-        print('3. Filtrar por superficie (ascendente o descendente)')
+        ordenar_paises(paises)
 
     elif opcion == "7":
         print("\n======================")
-        print("   Sub menu de estadisticas")
+        print(" Estadisticas")
         print("======================")
         print('1. País con mayor y menor población')
         print('2. Promedio de población')

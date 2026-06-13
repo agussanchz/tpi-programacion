@@ -209,11 +209,10 @@ requieren instalación adicional.
 <br>
 
 
-| Profesores  ||
-| --- | --- |
-| Ariel Enferrel||
-| Martin A. Garcia ||
-| Cinthia Rigoni ||
+## Profesores
+     Ariel Enferrel
+     Martin A. Garcia
+     Cinthia Rigoni
 
 ---
 

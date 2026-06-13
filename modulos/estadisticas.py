@@ -1,3 +1,4 @@
+#Estadisticas de paises
 def mostrar_estadisticas(paises):
 
     if len(paises) == 0:
@@ -107,4 +108,3 @@ def mostrar_estadisticas(paises):
 
         except KeyError as e:
             print(f"\nError: Falta el campo {e}.")
-

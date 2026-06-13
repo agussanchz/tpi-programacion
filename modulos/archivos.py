@@ -1,4 +1,4 @@
-# importaciones
+# Importaciones
 import csv
 
 # Cargar paises desde el archivo

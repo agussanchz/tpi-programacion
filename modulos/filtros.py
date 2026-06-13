@@ -10,7 +10,7 @@ def filtrar_paises(paises):
         "Opción: "
     )
 
-    #Filtro de continente
+    # Filtro de continente
     if opcion == "1":
 
         continente = input("\nIngrese el continente: ").strip()
@@ -41,7 +41,7 @@ def filtrar_paises(paises):
                 "para ese continente."
             )
 
-    #Filtro de Poblacion
+    # Filtro de Poblacion
     elif opcion == "2":
 
         try:
@@ -78,7 +78,7 @@ def filtrar_paises(paises):
         except ValueError:
             print("Error: Ingrese datos válidos.")
 
-    #Filtro de superfice
+    # Filtro de superfice
     elif opcion == "3":
 
         try:

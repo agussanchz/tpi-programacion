@@ -1,7 +1,6 @@
 import unicodedata
 
-#Funcion para normalizar el texto y quitar acentos.
-
+# Funcion para normalizar el texto y quitar acentos.
 def normalizar_texto(texto):
     texto = texto.lower()
 

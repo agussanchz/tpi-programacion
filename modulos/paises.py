@@ -1,6 +1,5 @@
 from modulos.normalizar import normalizar_texto
 
-
 # Mostrar información de países
 def mostrar_paises(paises):
     if len(paises) == 0:

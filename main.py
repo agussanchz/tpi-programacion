@@ -7,6 +7,7 @@ from modulos.paises import buscar_pais
 from modulos.filtros import filtrar_paises
 from modulos.ordenamientos import ordenar_paises
 from modulos.estadisticas import mostrar_estadisticas
+from modulos.archivos import guardar_cambios
 
 # Variable global para manejar el archivo csv
 paises = []
@@ -63,7 +64,7 @@ while opcion != "9":
         mostrar_estadisticas(paises)
 
     elif opcion == "8":
-        print("Guardar cambios")
+        guardar_cambios(paises)
     
     elif opcion == "9":
         print("Saliendo del sistema..")

@@ -19,20 +19,6 @@ estándar de Python (sin dependencias externas).
 
 <br>
 
-## Contenido
-
-- [Características](#-características)
-- [Estructura del proyecto](#-estructura-del-proyecto)
-- [Cómo ejecutar](#-cómo-ejecutar)
-- [Uso](#-uso)
-- [Formato del CSV](#-formato-del-csv)
-- [Decisiones técnicas](#-decisiones-técnicas)
-- [Uso de librerías de terceros](#-uso-de-librerías-de-terceros)
-- [Enlaces del proyecto](#-enlaces-del-proyecto)
-- [Integrantes](#-integrantes)
-
-<br>
-
 ---
 
 ## Características

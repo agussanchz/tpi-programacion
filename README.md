@@ -178,7 +178,7 @@ requieren instalación adicional.
 
 | Recurso | Enlace |
 | --- | --- |
-|  **Video demostrativo** | _Completar con el enlace de YouTube_ |
+|  **Video demostrativo** | https://youtu.be/UbDF35t3I7k |
 | **Repositorio GitHub** | https://github.com/agussanchz/tpi-programacion.git |
 <br>
 

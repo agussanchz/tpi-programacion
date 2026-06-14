@@ -19,6 +19,16 @@ def mostrar_paises(paises):
         except KeyError as e:
             print(f"Error: falta la clave {e} en un país.")
 
+# Verificacion de paìs existente
+def existe_pais(paises, nombre):
+    nombre = normalizar_texto(nombre)
+
+    for pais in paises:
+        if normalizar_texto(pais["Nombre"]) == nombre:
+            return True
+
+    return False
+
 # Agregar país
 def agregar_pais(paises):
 
@@ -36,6 +46,10 @@ def agregar_pais(paises):
 
     if nombre == "":
         print("\nError: El país debe tener un nombre.")
+        return
+
+    if existe_pais(paises, nombre):
+        print("\nError: Ese país ya existe.")
         return
 
     if continente == "":
